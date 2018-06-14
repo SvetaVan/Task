@@ -57,6 +57,30 @@ public class SortArrayByElementCount {
         return "["+Joiner.on(", ").join(Ints.asList(sortArrayByElementCount(array)))+"]";
     }
 
+    public static Boolean areArraysEqual(int[] a1, int[] a2){
+        if(a1.length!=a2.length){
+            return false;
+        }
+        for (int i = 0; i <a1.length ; i++) {
+            if(a1[i]!=a2[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {7, 4, 3, 6, 3, 7, 1, 7, 7, 0, 0, 8, 8, 0, 0, 0};
+        int[] correctArray = {1, 4,  3, 3,6, 8, 8, 7, 7, 7, 7, 0, 0, 0, 0,0};
+        int[] arrayForCheck = SortArrayByElementCount.sortArrayByElementCount(array);
+
+
+        System.out.println(areArraysEqual(correctArray,arrayForCheck));
+        System.out.println(arrayToString(array));
+        System.out.println(arrayToString(correctArray));
+        System.out.println(arrayToString(arrayForCheck));
+    }
+
 }
 
 
