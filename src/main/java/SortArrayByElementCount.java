@@ -17,8 +17,9 @@ public class SortArrayByElementCount {
     }
 
     //преобразования map в массив с учетом количества повторений каждого элемента
-    private static int[] convertMapToArray(Map<Integer, Integer> sortedMap, int[] arrayToReturn) {
+    private static int[] convertMapToArray(Map<Integer, Integer> sortedMap, int[] initialArray) {
         int countElements = 0;
+        int[] arrayToReturn = new int[initialArray.length];
         for (Map.Entry<Integer, Integer> entry : sortedMap.entrySet()) {
             for (int i = 0; i < entry.getValue(); i++) {
                 arrayToReturn[countElements] = entry.getKey();
@@ -54,7 +55,7 @@ public class SortArrayByElementCount {
     }
 
     public static String arrayToString(int[] array){
-        return "["+Joiner.on(", ").join(Ints.asList(sortArrayByElementCount(array)))+"]";
+        return "["+Joiner.on(", ").join(Ints.asList(array))+"]";
     }
 
     public static Boolean areArraysEqual(int[] a1, int[] a2){
@@ -75,7 +76,7 @@ public class SortArrayByElementCount {
         int[] arrayForCheck = SortArrayByElementCount.sortArrayByElementCount(array);
 
 
-        System.out.println(areArraysEqual(correctArray,arrayForCheck));
+        System.out.println(areArraysEqual(array,arrayForCheck));
         System.out.println(arrayToString(array));
         System.out.println(arrayToString(correctArray));
         System.out.println(arrayToString(arrayForCheck));

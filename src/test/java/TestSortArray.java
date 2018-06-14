@@ -9,7 +9,7 @@ public class TestSortArray {
     public void test() {
         {
             int[] array = {7, 4, 3, 6, 3, 7, 1, 7, 7, 0, 0, 8, 8, 0, 0, 0};
-            int[] correctArray = {1, 4, 6, 3, 3, 8, 8, 7, 7, 7, 7, 0, 0, 0, 0,0};
+            int[] correctArray = {1, 4,6, 3, 3, 8, 8, 7, 7, 7, 7, 0, 0, 0, 0,0};
             int[] arrayForCheck = SortArrayByElementCount.sortArrayByElementCount(array);
             Assert.assertTrue(String.format("Arrays are not equal, correct array is %s, the function's result is %s",
                     SortArrayByElementCount.arrayToString(correctArray),
@@ -26,8 +26,8 @@ public class TestSortArray {
                     SortArrayByElementCount.areArraysEqual(correctArray, arrayForCheck));
         }
         {
-            int[] array = {1, 1, 1, 1, 1, 1};
-            int[] correctArray = {1, 1, 1, 1, 1, 1};
+            int[] array = {1, 2, 1, 3, 2, 1};
+            int[] correctArray = {3, 2, 2, 1, 1, 1};
             int[] arrayForCheck = SortArrayByElementCount.sortArrayByElementCount(array);
             Assert.assertTrue(String.format("Arrays are not equal, correct array is %s, the function's result is %s",
                     SortArrayByElementCount.arrayToString(correctArray),
